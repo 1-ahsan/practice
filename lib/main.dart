@@ -1,10 +1,28 @@
 import 'package:flutter/material.dart';
 import 'page.dart';
 import 'fig1.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main(){
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+        apiKey: "AIzaSyCSPke0Nohzuq-lA4qwa8y3QscVSRfGkpM",
+        appId: "1:349922620422:android:1ebed260ff1b656ad87f87",
+      messagingSenderId: "349922620422",
+      projectId: "test-e02df",
+    ),
+  );
   runApp(const app());
 }
+
+
+// void main() async{
+//   WidgetsFlutterBinding.ensureInitialized();
+//   await Firebase.initializeApp(
+//     options: const FirebaseOptions(apiKey: apiKey, appId: appId, messagingSenderId: messagingSenderId, projectId: projectId)
+//   )
+// }
 
 class app extends StatelessWidget{
   const app({super.key});
@@ -47,5 +65,4 @@ class app extends StatelessWidget{
       // },
     );
   }
-
 }
